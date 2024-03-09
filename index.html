@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width-device-width, initial-scale=1.0" />
+    <title>RyharDev</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" link
+        rel="stylesheet" href="css/style.scss" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,300,700,100" rel="stylesheet" type="text/css">
+
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #fff;
+            font-family: "Roboto", sans-serif;
+            margin: 0;
+        }
+
+        .container {
+            padding: 1rem;
+            margin: 0 auto;
+            max-width: 100%;
+            width: 1000px;
+        }
+
+        header {
+            background-image: url("https://l.top4top.io/p_2155hxgxy0.png");
+            background-size: cover;
+            background-position: center center;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            min-height: calc(100vh - 102px);
+        }
+
+        .content {
+            font-size: 2rem;
+            margin: auto;
+            max-width: 100%;
+        }
+
+        .content h1 {
+            color: #00c2ff;
+            margin-bottom: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        nav .logo {
+            font-size: 2.5rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav li a {
+            color: white;
+            padding: 1rem;
+            text-decoration: none;
+        }
+
+        .selected {
+            font-weight: bold;
+        }
+
+        .highlight {
+            background-color: #00c2ff;
+            color: white;
+            padding: 1rem;
+            text-decoration: none;
+        }
+
+        footer {
+            background-color: #000;
+            color: #fff;
+            padding: 1rem;
+        }
+
+        footer ul {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        footer strong {
+            color: #00c2ff;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media screen and (max-width: 700px) {
+            .content {
+                margin: 2rem auto 0;
+                font-size: 1.4rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav li:not(:last-child) {
+                margin-bottom: 1rem;
+            }
+
+            nav .highlight {
+                display: none;
+            }
+
+            footer ul {
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            footer li {
+                margin: 1rem;
+                text-align: center;
+            }
+        }
+
+        /* pricing */
+
+        a {
+            text-decoration: none;
+        }
+
+        .price-header h1 {
+            text-align: center;
+            font-family: 'Lato', sans-serif;
+            font-size: 25px;
+            line-height: 32px;
+            padding-top: 70px;
+        }
+
+        h1 a {
+            color: #66CCCC;
+        }
+
+        .price-table-wrapper {
+            font-family: 'Lato', sans-serif;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .price-table-wrapper .featured-table {
+            box-shadow: 0px 0px 19px -3px rgba(0, 0, 0, 0.36);
+        }
+
+        .price-table-wrapper .pricing-table {
+            display: inline-block;
+            border: 1px solid #C8C8C8;
+            border-radius: 10px;
+            background: white;
+            margin: 20px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .price-table-wrapper .pricing-table__header {
+            padding: 20px;
+            font-size: 20px;
+            color: #909090;
+            background: #E0E0E0;
+        }
+
+        .price-table-wrapper .pricing-table__price {
+            color: #66CCCC;
+            padding: 20px;
+            margin: auto;
+            font-size: 40px;
+            font-weight: 500;
+        }
+
+        .price-table-wrapper .pricing-table__button {
+            display: block;
+            background: #66CCCC;
+            text-decoration: none;
+            padding: 20px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .price-table-wrapper .pricing-table__button:before {
+            position: absolute;
+            left: -20%;
+            top: -10%;
+            content: '';
+            width: 60%;
+            height: 220%;
+            transform: rotate(-30deg);
+            background: white;
+            opacity: .3;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .price-table-wrapper .pricing-table__button:after {
+            position: absolute;
+            content: '>';
+            top: 0;
+            right: 0;
+            font-size: 25px;
+            padding: 15px;
+            padding-right: 40px;
+            color: white;
+            opacity: 0;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .price-table-wrapper .pricing-table__button:hover {
+            background: black;
+        }
+
+        .price-table-wrapper .pricing-table__list {
+            padding: 20px;
+            color: #A0A0A0;
+        }
+
+        .price-table-wrapper .pricing-table__list li {
+            padding: 15px;
+            border-bottom: 1px solid #C8C8C8;
+            list-style: none;
+        }
+
+        .price-table-wrapper .pricing-table__list li:last-child {
+            border: none;
+        }
+
+        .price-table-wrapper .pricing-table:hover {
+            box-shadow: 0px 0px 19px -3px rgba(0, 0, 0, 0.36);
+        }
+
+        .price-table-wrapper .pricing-table:hover .pricing-table__button {
+            padding-left: 0;
+            padding-right: 35px;
+        }
+
+        .price-table-wrapper .pricing-table:hover .pricing-table__button:before {
+            top: -80%;
+            transform: rotate(0deg);
+            width: 100%;
+        }
+
+        .price-table-wrapper .pricing-table:hover .pricing-table__button:after {
+            opacity: 1;
+            padding-right: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <i class="fas fa-robot"></i><button onclick="typeWriter()"
+                    style="border-radius: 10px; background: none; opacity: 10px;">
+                    <font id="demo" face="aladin" size="6" color="white">BOTRyharDev<br></font>
+                </button>
+            </div>
+            <ul>
+                <li><a href="#" class="selected">Home</a></li>
+                <li><a href="https://wa.me/6282323780821">Contact</a></li>
+                <li><a href="/about/">My About</a></li>
+                <li><a href="https://wa.me/6282323780821" class="highlight">Number Bot</a></li>
+            </ul>
+        </nav>
+        <div class="content">
+            <div class="container">
+                <h1>Bot WhatsApp</h1>
+                <p>Nomor WhatsApp Bot</p>
+                <a class="highlight" href="https://wa.me/6283824064651">Number Bot</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Pricing -->
+    <div class="price-header">
+        <h1>Harga Sewa Server <br> By <a target="blank" href="https://github.com/RyharDev">RyharDev
+            </a></h1>
+    </div>
+
+    <div class="price-table-wrapper">
+        <div class="pricing-table featured-table">
+            <h2 class="pricing-table__header">- Free Bot -</h2>
+            <h3 class="pricing-table__price">Rp. 0</h3>
+            <a target="blank" class="pricing-table__button" href="https://wa.me/6282323780821">
+                Order Now!
+            </a>
+            <ul class="pricing-table__list">
+                <li>free forever </li>
+                <li>no costum</li>
+                <li>work all features</li>
+                <li>24 hour support</li>
+            </ul>
+        </div>
+    <!-- End of Pricing -->
+
+    <footer>
+        <ul class="container">
+            <li>
+                <strong>Author</strong>
+                <p>Rahardiyan</p>
+            </li>
+            <li>
+                <strong>Phone</strong>
+                <p>+62 823-2378-0821</p>
+            </li>
+            <li>
+                <strong>Email</strong>
+                <p>xyzyyyy31@gmail.com</p>
+            </li>
+        </ul>
+    </footer>
+</body>
+<html>
